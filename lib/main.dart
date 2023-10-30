@@ -7,23 +7,43 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
+// This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Homescreen(),
-    ); // material app 
+    return const MaterialApp(
+
+      home: HomeScreen(),
+    );
   }
 }
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
-  widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: (
-      tittle: const Text('City tour')
+      appBar: AppBar(
+        title: const Text('City Tour'),
       ),
-    )
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 10),
+
+              SingleChildScrollView(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                ),
+              )
+
+            ],
+
+          ),
+        ),
+      ),
+    );
   }
 }
+
